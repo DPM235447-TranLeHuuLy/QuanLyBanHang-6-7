@@ -114,7 +114,6 @@
             btnThoat.TabIndex = 11;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
-            //btnThoat.Click += btnThoat_Click;
             // 
             // btnHuyBo
             // 
@@ -124,7 +123,6 @@
             btnHuyBo.TabIndex = 10;
             btnHuyBo.Text = "Hủy Bỏ";
             btnHuyBo.UseVisualStyleBackColor = true;
-            //btnHuyBo.Click += btnHuyBo_Click;
             // 
             // btnLuu
             // 
@@ -135,7 +133,6 @@
             btnLuu.TabIndex = 9;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
-            //btnLuu.Click += btnLuu_Click;
             // 
             // btnXoa
             // 
@@ -146,7 +143,6 @@
             btnXoa.TabIndex = 8;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
-           // btnXoa.Click += btnXoa_Click;
             // 
             // btnSua
             // 
@@ -156,7 +152,6 @@
             btnSua.TabIndex = 7;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
-            //btnSua.Click += btnSua_Click;
             // 
             // btnThem
             // 
@@ -166,7 +161,6 @@
             btnThem.TabIndex = 6;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
-            //btnThem.Click += btnThem_Click;
             // 
             // label3
             // 
@@ -281,6 +275,7 @@
             Name = "frmKhachHang";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Khách hàng";
+            Load += frmKhachHang_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
