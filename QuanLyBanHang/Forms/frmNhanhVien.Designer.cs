@@ -71,6 +71,7 @@
             btnXuat.TabIndex = 14;
             btnXuat.Text = "Xuất...";
             btnXuat.UseVisualStyleBackColor = true;
+            btnXuat.Click += btnXuat_Click;
             // 
             // btnNhap
             // 
@@ -80,6 +81,7 @@
             btnNhap.TabIndex = 13;
             btnNhap.Text = "Nhập...";
             btnNhap.UseVisualStyleBackColor = true;
+            btnNhap.Click += btnNhap_Click;
             // 
             // btnTimKiem
             // 
@@ -357,7 +359,9 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "frmNhanhVien";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Nhân Viên";
+            Load += frmNhanVien_Load;
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             groupBox1.ResumeLayout(false);

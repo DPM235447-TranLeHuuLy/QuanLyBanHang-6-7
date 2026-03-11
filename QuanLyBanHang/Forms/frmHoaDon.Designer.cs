@@ -33,6 +33,12 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             dataGridView = new DataGridView();
+            STT = new DataGridViewTextBoxColumn();
+            HoVaTenNhanVien = new DataGridViewTextBoxColumn();
+            HoVaTenKhachHang = new DataGridViewTextBoxColumn();
+            NgayLap = new DataGridViewTextBoxColumn();
+            TongTienHoaDon = new DataGridViewTextBoxColumn();
+            XemChiTiet = new DataGridViewLinkColumn();
             btnLapHoaDon = new Button();
             btnInHoaDon = new Button();
             btnSua = new Button();
@@ -40,12 +46,7 @@
             btnThoat = new Button();
             btnTimKiem = new Button();
             btnXuat = new Button();
-            STT = new DataGridViewTextBoxColumn();
-            HoVaTenNhanVien = new DataGridViewTextBoxColumn();
-            HoVaTenKhachHang = new DataGridViewTextBoxColumn();
-            NgayLap = new DataGridViewTextBoxColumn();
-            TongTienHoaDon = new DataGridViewTextBoxColumn();
-            XemChiTiet = new DataGridViewLinkColumn();
+            btnNhap = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -74,6 +75,63 @@
             dataGridView.RowHeadersWidth = 51;
             dataGridView.Size = new Size(1277, 304);
             dataGridView.TabIndex = 0;
+            dataGridView.CellContentClick += dataGridView_CellContentClick;
+            // 
+            // STT
+            // 
+            STT.DataPropertyName = "ID";
+            STT.HeaderText = "ID";
+            STT.MinimumWidth = 6;
+            STT.Name = "STT";
+            // 
+            // HoVaTenNhanVien
+            // 
+            HoVaTenNhanVien.DataPropertyName = "HoVaTenNhanVien";
+            HoVaTenNhanVien.HeaderText = "Nhân viên ";
+            HoVaTenNhanVien.MinimumWidth = 6;
+            HoVaTenNhanVien.Name = "HoVaTenNhanVien";
+            // 
+            // HoVaTenKhachHang
+            // 
+            HoVaTenKhachHang.DataPropertyName = "HoVaTenKhachHang";
+            HoVaTenKhachHang.HeaderText = "Khách hàng";
+            HoVaTenKhachHang.MinimumWidth = 6;
+            HoVaTenKhachHang.Name = "HoVaTenKhachHang";
+            // 
+            // NgayLap
+            // 
+            NgayLap.DataPropertyName = "NgayLap";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            NgayLap.DefaultCellStyle = dataGridViewCellStyle1;
+            NgayLap.HeaderText = "Ngày lập";
+            NgayLap.MinimumWidth = 6;
+            NgayLap.Name = "NgayLap";
+            // 
+            // TongTienHoaDon
+            // 
+            TongTienHoaDon.DataPropertyName = "TongTienHoaDon";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Blue;
+            dataGridViewCellStyle2.Format = "N3";
+            dataGridViewCellStyle2.NullValue = null;
+            TongTienHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
+            TongTienHoaDon.HeaderText = "Tổng tiền";
+            TongTienHoaDon.MinimumWidth = 6;
+            TongTienHoaDon.Name = "TongTienHoaDon";
+            // 
+            // XemChiTiet
+            // 
+            XemChiTiet.DataPropertyName = "XemChiTiet";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            XemChiTiet.DefaultCellStyle = dataGridViewCellStyle3;
+            XemChiTiet.HeaderText = "Chi tiết";
+            XemChiTiet.MinimumWidth = 6;
+            XemChiTiet.Name = "XemChiTiet";
+            XemChiTiet.Resizable = DataGridViewTriState.True;
+            XemChiTiet.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // btnLapHoaDon
             // 
@@ -137,74 +195,30 @@
             // 
             // btnXuat
             // 
-            btnXuat.Location = new Point(946, 376);
+            btnXuat.Location = new Point(1078, 376);
             btnXuat.Name = "btnXuat";
             btnXuat.Size = new Size(136, 29);
             btnXuat.TabIndex = 7;
             btnXuat.Text = "Xuất Excel… ";
             btnXuat.UseVisualStyleBackColor = true;
+            btnXuat.Click += btnXuat_Click;
             // 
-            // STT
+            // btnNhap
             // 
-            STT.DataPropertyName = "ID";
-            STT.HeaderText = "ID";
-            STT.MinimumWidth = 6;
-            STT.Name = "STT";
-            // 
-            // HoVaTenNhanVien
-            // 
-            HoVaTenNhanVien.DataPropertyName = "HoVaTenNhanVien";
-            HoVaTenNhanVien.HeaderText = "Nhân viên ";
-            HoVaTenNhanVien.MinimumWidth = 6;
-            HoVaTenNhanVien.Name = "HoVaTenNhanVien";
-            // 
-            // HoVaTenKhachHang
-            // 
-            HoVaTenKhachHang.DataPropertyName = "HoVaTenKhachHang";
-            HoVaTenKhachHang.HeaderText = "Khách hàng";
-            HoVaTenKhachHang.MinimumWidth = 6;
-            HoVaTenKhachHang.Name = "HoVaTenKhachHang";
-            // 
-            // NgayLap
-            // 
-            NgayLap.DataPropertyName = "NgayLap";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            NgayLap.DefaultCellStyle = dataGridViewCellStyle1;
-            NgayLap.HeaderText = "Ngày lập";
-            NgayLap.MinimumWidth = 6;
-            NgayLap.Name = "NgayLap";
-            // 
-            // TongTienHoaDon
-            // 
-            TongTienHoaDon.DataPropertyName = "TongTienHoaDon";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.Blue;
-            dataGridViewCellStyle2.Format = "N3";
-            dataGridViewCellStyle2.NullValue = null;
-            TongTienHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
-            TongTienHoaDon.HeaderText = "Tổng tiền";
-            TongTienHoaDon.MinimumWidth = 6;
-            TongTienHoaDon.Name = "TongTienHoaDon";
-            // 
-            // XemChiTiet
-            // 
-            XemChiTiet.DataPropertyName = "XemChiTiet";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            XemChiTiet.DefaultCellStyle = dataGridViewCellStyle3;
-            XemChiTiet.HeaderText = "Chi tiết";
-            XemChiTiet.MinimumWidth = 6;
-            XemChiTiet.Name = "XemChiTiet";
-            XemChiTiet.Resizable = DataGridViewTriState.True;
-            XemChiTiet.SortMode = DataGridViewColumnSortMode.Automatic;
+            btnNhap.Location = new Point(936, 376);
+            btnNhap.Name = "btnNhap";
+            btnNhap.Size = new Size(136, 29);
+            btnNhap.TabIndex = 8;
+            btnNhap.Text = "Nhập… ";
+            btnNhap.UseVisualStyleBackColor = true;
+            btnNhap.Click += btnNhap_Click;
             // 
             // frmHoaDon
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1279, 444);
+            Controls.Add(btnNhap);
             Controls.Add(btnXuat);
             Controls.Add(btnTimKiem);
             Controls.Add(btnThoat);
@@ -239,5 +253,6 @@
         private DataGridViewTextBoxColumn NgayLap;
         private DataGridViewTextBoxColumn TongTienHoaDon;
         private DataGridViewLinkColumn XemChiTiet;
+        private Button btnNhap;
     }
 }
