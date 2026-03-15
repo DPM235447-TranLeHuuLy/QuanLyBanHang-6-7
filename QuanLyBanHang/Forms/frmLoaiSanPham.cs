@@ -108,7 +108,7 @@ namespace QuanLyBanHang
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnNhap_Click(object sender, EventArgs e)

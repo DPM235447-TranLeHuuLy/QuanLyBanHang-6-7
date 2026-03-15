@@ -197,6 +197,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "frmHangSanXuat";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Hãng Sản Xuất";
             Load += frmHangSanXuat_Load;
             groupBox2.ResumeLayout(false);

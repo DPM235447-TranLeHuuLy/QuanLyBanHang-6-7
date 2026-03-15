@@ -214,6 +214,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "frmLoaiSanPham";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Loại sản phẩm";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

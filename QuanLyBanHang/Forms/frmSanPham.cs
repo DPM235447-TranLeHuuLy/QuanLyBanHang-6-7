@@ -238,7 +238,7 @@ namespace QuanLyBanHang.Forms
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -246,9 +246,27 @@ namespace QuanLyBanHang.Forms
             if (dataGridView.Columns[e.ColumnIndex].Name == "HinhAnh")
             {
 
-                Image image = Image.FromFile(Path.Combine(imagesFolder, e.Value.ToString()));
-                image = new Bitmap(image, new Size(24, 24));
-                e.Value = image;
+                
+                string fileName = e.Value?.ToString();
+
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    string path = Path.Combine(imagesFolder, fileName);
+
+                    
+                    if (File.Exists(path))
+                    {
+                        using (Image temp = Image.FromFile(path))
+                        {
+                            e.Value = new Bitmap(temp, new Size(24, 24));
+                        }
+                    }
+                    else
+                    {
+                        
+                        e.Value = null;
+                    }
+                }
             }
         }
 

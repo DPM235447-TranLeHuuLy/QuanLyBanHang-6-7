@@ -398,6 +398,7 @@
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Name = "frmSanPham";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sản Phẩm";
             Load += frmSanPham_Load;
             groupBox1.ResumeLayout(false);

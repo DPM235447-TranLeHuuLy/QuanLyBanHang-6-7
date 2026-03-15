@@ -359,7 +359,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "frmNhanhVien";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Nhân Viên";
             Load += frmNhanVien_Load;
             groupBox2.ResumeLayout(false);
